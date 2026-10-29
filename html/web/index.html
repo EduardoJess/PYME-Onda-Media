@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web promocional OndaMedia</title>
+    <title>Web principal OndaMedia</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
+   <h1><section id="inicio">Web principal OndaMedia</section></h1>
  <div class="logo">
     <a href="/">
       <img src="imagenes\pagweb1.png" alt="Logotipo de la empresa">
@@ -15,7 +16,7 @@
   
   <nav class="navigation">
     <ul>
-      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#inicio">Ir a inicio</a></li>
       <li><a href="#formulario">Ir a formulario</a></li>
       <li><a href="#contacto">Ir a contacto</a></li>
     </ul>
@@ -47,7 +48,11 @@
                   <h3>Otros datos</h3>
                      <fieldset>
                         <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" required><br>
+                        <label for="telefono">Número de teléfono:</label>
+                        <input type="number" id="telefono" name="telefono" pattern="[0-9]{9}" maxlength="9" minlength="9"><br>
+                        <label for="CodPost">Código Postal:</label>
+                        <input type="tel" id="CodPost" name="CodPost" required pattern="[0-9]{5}" maxlength="5" minlength="5" placeholder="12345" title="Debe contener exactamente 5 números">
                      </fieldset>
                  </div>
             <label for="enviar">EVIAR FORMULARIO</label>
