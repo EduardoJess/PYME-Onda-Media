@@ -53,12 +53,29 @@
                         <label for="telefono">Número de teléfono:</label>
                         <input type="number" id="telefono" name="telefono" pattern="[0-9]{9}" maxlength="9" minlength="9"><br>
                         <label for="CodPost">Código Postal:</label>
-                        <input type="tel" id="CodPost" name="CodPost" required pattern="[0-9]{5}" maxlength="5" minlength="5" placeholder="12345" title="Debe contener exactamente 5 números">
+                        <input type="tel" id="CodPost" name="CodPost" required pattern="[0-9]{5}" maxlength="5" minlength="5" placeholder="12345" title="Debe contener exactamente 5 números"><br>
+                        <label for="FechaNaci">Fecha de nacimiento:</label>
+                        <input type="date" id="FechaNaci" name="FechaNaci" required>
                      </fieldset>
                  </div>
-            <label for="enviar">EVIAR FORMULARIO</label>
+                   <h3>Tipo de mensaje</h3>
+                    <input type="radio" id="duda" name="TipoMensaje" value="duda">
+                    <label for="Duda">Duda</label><br>
+
+                    <input type="radio" id="sugerencia" name="TipoMensaje" value="sugerencia">
+                    <label for="sugerencia">Sugerencia</label><br>
+
+                    <input type="radio" id="queja" name="TipoMensaje" value="queja">
+                    <label for="queja">Queja</label><br>
+
+                    <input type="radio" id="otros" name="TipoMensaje" value="otros">
+                    <label for="otros">Otros</label>
+            <label for="enviar">ENVIAR FORMULARIO</label>
             <input type="submit" id="enviar" name="enviar">
          </fieldset>
      </form>
      <footer><section id="contacto">OndaMedia@hotmail.es</section></footer>
      </body>
+     
+     
+    <!-- Investigar position:fixed  -->
