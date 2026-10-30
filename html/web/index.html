@@ -57,7 +57,7 @@
 
                     <label for="CodPost">Código Postal:</label>
                     <input type="tel" id="CodPost" name="CodPost" required pattern="[0-9]{5}" maxlength="5" minlength="5" placeholder="12345" title="Debe contener exactamente 5 números"><br>
-                    
+
                     <label for="FechaNaci">Fecha de nacimiento:</label>
                     <input type="date" id="FechaNaci" name="FechaNaci" required>
                 </fieldset>
@@ -83,9 +83,13 @@
 
             <!-- Subida de documentos -->
                     <label for="documentos"><h3>Subida de documentos (puede seleccionar varios):</h3></label>
-                    <input type="file" id="documentos" name="documentos[]" accept=".pdf, .doc, .docx, application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document" multiple>
+                    <input type="file" id="documentos" name="documentos[]" accept=".pdf, .doc, .docx, application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document" multiple><br>
             <!-- /pdf, /msword, /vnd asegura que el filtro funciona de forma correcta tanto en cualquier navegador como en cualquier SO -->
 
+            <!-- Aceptación de condiciones "protección de datos" -->
+                    <input type="checkbox" id="protedatos" name="protedatos" value="ACEPTO_protedatos" required>
+                    <label for="protedatos">Acepto las condiciones de Protección de datos </label>
+           
             <!-- FIN (ENVIAR) --><br>
                     <label for="enviar">ENVIAR FORMULARIO</label>
                     <input type="submit" id="enviar" name="enviar"><br>
@@ -96,4 +100,4 @@
   <footer><section id="contacto">OndaMedia@hotmail.es</section></footer>
 </body>
 </html>  
-    <!-- Investigar position:fixed  -->
+    <!-- Investigar position:fixed (ES EN CSS DON <DIV>) -->
