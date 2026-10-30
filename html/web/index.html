@@ -27,19 +27,19 @@
 
   <main>
     <form action="OndaMedia.php" method="get">
-       <!-- Formulario de registro -->
-       <h2>Registro OndaMedia</h2>
-        <fieldset><br>
-           <legend><section id="formulario">Formulario</section></legend>
+           <!-- Formulario de registro -->
+             <h2>Registro OndaMedia</h2>
+               <fieldset><br>
+                 <legend><section id="formulario">Formulario</section></legend>
 
            <!-- Introducen datos personales -->
-           <h3>Datos personales</h3>
+              <h3>Datos personales</h3>
             <div>
                <fieldset>
                     <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" required minlength="3" pattern=".*\S.*" title="El nombre debe tener mínimo 3 caracteres y no puede estar vacío" placeholder="Escribe tu nombre"><br>
+                    <input type="text" id="nombre" name="nombre" required minlength="3" pattern=".*\S.*" title="El nombre debe tener mínimo 3 caracteres y no puede estar vacío" placeholder="Escriba su nombre"><br>
                     <label for="apellido">Apellidos:</label>
-                    <input type="text" id="apellido" name="apellido" required minlength="3" maxlength="40" pattern=".*\S.*" title="Los apellidos deben tener mínimo 3 caracteres y no pueden estar vacío" placeholder="Escribe tus dos apellidos"><br>
+                    <input type="text" id="apellido" name="apellido" required minlength="3" maxlength="40" pattern=".*\S.*" title="Los apellidos deben tener mínimo 3 caracteres y no pueden estar vacío" placeholder="Escriba sus dos apellidos"><br>
                     <label for="edad">Edad:</label>
                     <input type="number" id="edad" name="edad" required min="16" max="65">
                </fieldset><br>
@@ -50,10 +50,10 @@
               <h3>Otros datos</h3>
                 <fieldset>
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required><br>
-            <!-- Corrección: type="number" no soporta bien pattern ni minlength/maxlength. Se cambia a type="tel" -->
+                    <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com"><br>
+ 
                     <label for="telefono">Número de teléfono:</label>
-                    <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9}" placeholder="600123456"><br>
+                    <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9}" maxlength="9" minlength="9" placeholder="600123456"><br>
 
                     <label for="CodPost">Código Postal:</label>
                     <input type="tel" id="CodPost" name="CodPost" required pattern="[0-9]{5}" maxlength="5" minlength="5" placeholder="12345" title="Debe contener exactamente 5 números"><br>
@@ -88,7 +88,7 @@
 
             <!-- Aceptación de condiciones "protección de datos" -->
                     <input type="checkbox" id="protedatos" name="protedatos" value="ACEPTO_protedatos" required>
-                    <label for="protedatos">Acepto las condiciones de Protección de datos </label>
+                    <label for="protedatos"><b>Acepto las condiciones de Protección de datos</b></label>
            
             <!-- FIN (ENVIAR) --><br>
                     <label for="enviar">ENVIAR FORMULARIO</label>
@@ -100,4 +100,4 @@
   <footer><section id="contacto">OndaMedia@hotmail.es</section></footer>
 </body>
 </html>  
-    <!-- Investigar position:fixed (ES EN CSS DON <DIV>) -->
+    <!-- FALTA <ARTICLE> (position:fixed ES EN CSS DON <DIV>) -->
