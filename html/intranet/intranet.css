@@ -1,0 +1,39 @@
+/* 1. Estructura y Fondo Obligatorio */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { 
+    font-family: sans-serif; 
+    background-color: #0f172a; 
+    color: #cbd5e1; 
+    padding-top: 100px; /* Evita que la barra tape el contenido */
+}
+
+/* 2. Contenedor y Textos */
+main, .intranet-privada { max-width: 650px; margin: 0 auto; padding: 20px; }
+h2 { color: #f8fafc; margin-bottom: 20px; }
+h3 { color: #93c5fd; margin: 15px 0 8px; }
+
+/* 3. Formulario */
+label { display: block; margin: 10px 0 5px; }
+input[type="text"], input[type="password"] {
+    width: 100%; padding: 10px; margin-bottom: 15px;
+    background: #0f172a; border: 1px solid #475569; color: #f8fafc; border-radius: 6px;
+}
+input[type="submit"] {
+    width: 100%; padding: 12px; background: #38bdf8; border: none; color: #0f172a; font-weight: bold; cursor: pointer; border-radius: 6px;
+}
+
+/* 4. Alerta de error */
+.error-alerta { background: rgba(239,68,68,0.2); border: 1px solid #ef4444; color: #fca5a5; padding: 12px; margin-bottom: 15px; border-radius: 6px; }
+
+/* 5. Cabecera fija de la Intranet */
+.intranet-header {
+    position: fixed; top: 0; left: 0; width: 100%; height: 65px; padding: 0 5%;
+    display: flex; justify-content: space-between; align-items: center;
+    background: #1e293b; border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.intranet-header h2 { margin: 0; font-size: 18px; }
+.btn-cerrar { padding: 8px 16px; background: transparent; color: #cbd5e1; border: 1px solid #475569; cursor: pointer; border-radius: 6px; }
+
+/* 6. Bloque de datos */
+.tarjeta-datos { border: 1px solid #334155; padding: 20px; background: #1e293b; border-radius: 8px; margin-top: 20px; }
+.tarjeta-datos h4 { color: #38bdf8; margin-bottom: 10px; }
