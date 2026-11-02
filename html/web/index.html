@@ -9,24 +9,27 @@
 <body>
   <!-- Título e imagen -->
   <header>
-    <h1><section id="inicio">Web principal OndaMedia</section></h1>
-    <div class="logo">
-      <a href="#inicio">
-        <img src="imagenes/pagweb1.png" alt="Logotipo de la empresa">
-      </a>
-    </div> 
+    <div class="logo-container">
+        <img src="imagenes/pagweb1.png" alt="Imagen de la empresa">
+        <h1>Web principal OndaMedia</h1>
+    </div>
     
+    <!-- Barra de navegación -->
     <nav class="navigation">
-      <ul>
-        <li><a href="#inicio">Ir a inicio</a></li>
-        <li><a href="#formulario">Ir a formulario</a></li>
-        <li><a href="#contacto">Ir a contacto</a></li>
-      </ul>
+        <ul>
+          <li><a href="#inicio" class="active">Ir a inicio</a></li>
+          <li><a href="#formulario">Ir a formulario</a></li>
+          <li><a href="#contacto">Ir a contacto</a></li>
+        </ul>
     </nav>
   </header>
 
   <main>
     <form action="OndaMedia.php" method="get">
+
+      <h2> <section id="inicio">Introducción</section></h2>
+        <p>Somos una empresa que trabaja en </p>
+
            <!-- Formulario de registro -->
              <h2>Registro OndaMedia</h2>
                <fieldset><br>
@@ -38,8 +41,10 @@
                <fieldset>
                     <label for="nombre">Nombre:</label>
                     <input type="text" id="nombre" name="nombre" required minlength="3" pattern=".*\S.*" title="El nombre debe tener mínimo 3 caracteres y no puede estar vacío" placeholder="Escriba su nombre"><br>
+
                     <label for="apellido">Apellidos:</label>
                     <input type="text" id="apellido" name="apellido" required minlength="3" maxlength="40" pattern=".*\S.*" title="Los apellidos deben tener mínimo 3 caracteres y no pueden estar vacío" placeholder="Escriba sus dos apellidos"><br>
+                    
                     <label for="edad">Edad:</label>
                     <input type="number" id="edad" name="edad" required min="16" max="65">
                </fieldset><br>
@@ -84,20 +89,24 @@
             <!-- Subida de documentos -->
                     <label for="documentos"><h3>Subida de documentos (puede seleccionar varios):</h3></label>
                     <input type="file" id="documentos" name="documentos[]" accept=".pdf, .doc, .docx, application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document" multiple><br>
-            <!-- /pdf, /msword, /vnd asegura que el filtro funciona de forma correcta tanto en cualquier navegador como en cualquier SO -->
+            <!-- /pdf, /msword, /vnd es para asegurar que el filtro funciona de forma correcta tanto en cualquier navegador como en cualquier SO -->
 
             <!-- Aceptación de condiciones "protección de datos" -->
                     <input type="checkbox" id="protedatos" name="protedatos" value="ACEPTO_protedatos" required>
                     <label for="protedatos"><b>Acepto las condiciones de Protección de datos</b></label>
            
-            <!-- FIN (ENVIAR) --><br>
+            <!-- FIN (BOTÓN DE ENVIAR) --><br>
                     <label for="enviar">ENVIAR FORMULARIO</label>
                     <input type="submit" id="enviar" name="enviar"><br>
         </fieldset>
     </form>
   </main>
 
-  <footer><section id="contacto">OndaMedia@hotmail.es</section></footer>
+  <footer><section id="contacto">OndaMedia@gmail.com</section><br>
+      <p>Errekalde Hiribidea, 1, Local 11, 20018 Donostia / San Sebastián</p><br>
+      <p>Teléfono 648469467</p><br>
+        <<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2442.6037999104847!2d-2.0121630415701692!3d43.277365481727955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd51b04beef6e1b9%3A0x314393ae80ec5d3!2sBengoa%20Audiovisuales!5e0!3m2!1ses!2ses!4v1793612803736!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </footer>
 </body>
 </html>  
-    <!-- FALTA <ARTICLE> (position:fixed ES EN CSS DON <DIV>) -->
+    <!-- FALTA <ARTICLE> -->
