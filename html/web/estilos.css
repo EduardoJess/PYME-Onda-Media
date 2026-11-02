@@ -181,6 +181,3 @@ footer {
     color: #64748b; /* Gris apagado para que no robe atención */
     font-size: 13px;
 }
-html {
-    scroll-behavior: smooth; /* Hace que la pantalla se deslice suavemente */
-}
