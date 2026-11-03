@@ -7,6 +7,22 @@ body {
     padding-top: 100px; /* Evita que la barra tape el contenido */
 }
 
+/* Barra Superior Fija (Header, Logo y Menú) */
+header {
+    position: fixed; top: 0; left: 0; width: 100%; height: 65px; padding: 0 5%; z-index: 9999;
+    display: flex; justify-content: space-between; align-items: center;
+    background-color: rgba(30, 41, 59, 0.9); border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.logo-container { display: flex; align-items: center; gap: 15px; }
+.logo-container img { height: 38px; width: auto; }
+.logo-container h1 { color: #f8fafc; font-size: 18px; font-weight: 600; }
+
+.navigation ul { list-style: none; display: flex; gap: 15px; }
+.navigation ul li a { 
+    color: #94a3b8; text-decoration: none; font-size: 14px; font-weight: 500; padding: 8px 16px; border-radius: 6px; 
+}
+.navigation ul li a:hover, .navigation ul li a.active { color: #f8fafc; background-color: rgba(255, 255, 255, 0.06); }
+
 /* 2. Contenedor y Textos */
 main, .intranet-privada { max-width: 650px; margin: 0 auto; padding: 20px; }
 h2 { color: #f8fafc; margin-bottom: 20px; }

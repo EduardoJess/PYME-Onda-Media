@@ -1,4 +1,4 @@
-/* 1. Reset e Identidad Visual Obligatoria */
+/* Reset e Identidad Visual Obligatoria */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { 
     font-family: 'Segoe UI', Arial, sans-serif; 
@@ -7,7 +7,7 @@ body {
     padding-top: 100px; /* Evita que el menú fijo tape el contenido superior */
 }
 
-/* 2. Barra Superior Fija (Header, Logo y Menú) */
+/* Barra Superior Fija (Header, Logo y Menú) */
 header {
     position: fixed; top: 0; left: 0; width: 100%; height: 65px; padding: 0 5%; z-index: 9999;
     display: flex; justify-content: space-between; align-items: center;
@@ -23,13 +23,15 @@ header {
 }
 .navigation ul li a:hover, .navigation ul li a.active { color: #f8fafc; background-color: rgba(255, 255, 255, 0.06); }
 
-/* 3. Contenedor del Contenido */
+/* Imágenes */
+
+/* Contenedor del Contenido */
 main { max-width: 650px; margin: 0 auto; padding: 20px; }
 main h2 { color: #f8fafc; margin-bottom: 20px; font-size: 24px; }
 main h3 { color: #93c5fd; font-size: 16px; margin: 15px 0 8px; }
 .intro-texto { line-height: 1.6; margin-bottom: 25px; }
 
-/* 4. Formularios, Cajas de entrada y Botón */
+/* Formularios, Cajas de entrada y Botón */
 fieldset { border: 1px solid #334155; padding: 20px; border-radius: 8px; background-color: #1e293b; margin-bottom: 20px; }
 legend { color: #38bdf8; font-weight: 600; padding: 0 8px; }
 label { display: inline-block; margin-top: 10px; margin-bottom: 5px; font-size: 14px; }
@@ -51,6 +53,6 @@ input[type="submit"] {
 }
 input[type="submit"]:hover { background-color: #7dd3fc; }
 
-/* 5. Pie de Página */
+/* Pie de Página */
 footer { text-align: center; padding: 40px 0; color: #64748b; font-size: 13px; }
 footer iframe { max-width: 100%; border-radius: 8px; margin-top: 15px; }

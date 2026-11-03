@@ -4,11 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intranet - OndaMedia</title>
+           <!-- 1. Enlace para el Favicon (el logo pequeño) -->
+    <link rel="icon" href="imagenes\icono.ico" type="image/png">
+    <!-- Enlace para los estilos -->
     <link rel="stylesheet" href="intranet.css">
 </head>
 <body>
-
-  <!-- Id único para que JavaScript pueda ocultarlo más tarde cuando los datos sean correctos-->
+    <!-- Título e imagen -->
+  <header>
+    <div class="logo-container">
+        <img src="imagenes\favicon.png" alt="Logo Oficial OndaMedia">
+        <h1>Intranet - OndaMedia</h1>
+    </div>
+    <!-- Barra de navegación --> <!-- ENLACE A LA PÁGINA PRINCIPAL -->
+    <nav class="navigation">
+        <ul>
+          <li><a href="index.html">Volver a la web principal</a></li> 
+        </ul>
+    </nav>
+   </header>
+    <!-- Id único para que JavaScript pueda ocultarlo más tarde cuando los datos sean correctos-->
   <main class="login-container" id="loginBox">
       <h2>Acceso Intranet</h2>
       <p class="login-sub">Introduce tus credenciales de administrador</p>
@@ -29,7 +44,7 @@
 
   </main>
 
-  <!-- CONTENIDO PRIVADO (Oculto al principio) -->
+    <!-- CONTENIDO PRIVADO (Oculto al principio) -->
   <div class="intranet-privada" id="contenidoPrivado" style="display: none;">
       <header class="intranet-header">
           <h2>Panel de Gestión OndaMedia</h2>
@@ -47,7 +62,7 @@
       </section>
   </div>
 
-  <!-- JAVASCRIPT DE VALIDACIÓN -->
+    <!-- JAVASCRIPT DE VALIDACIÓN -->
   <script>
     //En cuanto el usuario pulse el botón de enviar, ejecuta la función llamada validarAcceso y pásale los detalles del evento
       function validarAcceso(event) {
