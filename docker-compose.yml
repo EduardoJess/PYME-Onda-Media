@@ -1,0 +1,61 @@
+services:
+  proxy:
+    image: nginx:alpine
+    restart: unless-stopped
+    ports:
+      - "${HTTP_PORT}:80"
+    environment:
+      DOMAIN: "${DOMAIN}"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro   # la configuración
+      - ./web:/usr/share/nginx/html/web:ro
+      - ./intranet:/usr/share/nginx/html/intranet:ro
+    # depends_on:
+    #   - portainer
+    #   - code-server
+    #   - duplicati
+    #   - uptime-kuma
+
+  # portainer:
+  #   image: portainer/portainer-ce:latest
+  #   restart: unless-stopped
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock
+  #     - portainer_data:/data
+
+  # code-server:
+  #   image: codercom/code-server:latest
+  #   restart: unless-stopped
+  #   environment:
+  #     PASSWORD: "${PASSWORD_CODE_SERVER}"
+  #   working_dir: /home/coder/project
+  #   volumes:
+  #     - ./intranet:/home/coder/project/intranet
+  #     - ./web:/home/coder/project/web
+
+  # duplicati:
+  #   image: lscr.io/linuxserver/duplicati:latest
+  #   restart: unless-stopped
+  #   environment:
+  #     PUID: "0"
+  #     PGID: "0"
+  #     TZ: "${TZ}"
+  #     SETTINGS_ENCRYPTION_KEY: "${DUPLICATI_ENCRYPTION_KEY:-default1234}"
+  #     DUPLICATI__WEBSERVICE_PASSWORD: "${DUPLICATI_PASSWORD:-passwordnotset}"
+  #   volumes:
+  #     - duplicati_data:/config
+  #     - ./backups:/backups
+  #     - ./intranet:/source/intranet:ro
+  #     - ./web:/source/web:ro
+  #     - portainer_data:/source/portainer_data:ro
+
+  # uptime-kuma:
+  #   image: louislam/uptime-kuma:1
+  #   restart: unless-stopped
+  #   volumes:
+  #     - kuma_data:/app/data
+
+volumes:
+  portainer_data:
+  duplicati_data:
+  kuma_data:
