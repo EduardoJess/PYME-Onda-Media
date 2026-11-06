@@ -4,7 +4,8 @@ body {
     font-family: 'Segoe UI', Arial, sans-serif; 
     background-color: #0f172a; 
     color: #cbd5e1; 
-    padding-top: 100px; /* Evita que el menú fijo tape el contenido superior */
+    padding-top: 100px; 
+    /* Evita que el menú fijo tape el contenido superior */
 }
 
 /* BARRA SUPERIOR FIJA (Header, Logo y Menú) (con ayuda de IA) */
@@ -24,13 +25,15 @@ header {
 .logo-container { 
     float: left;
     height: 65px;
-    line-height: 65px; /* Centra verticalmente el texto interior */
+    line-height: 65px; 
+    /* Centra verticalmente el texto interior */
 }
 
 .logo-container img { 
     height: 38px; 
     width: auto; 
-    vertical-align: middle; /* Alinea la imagen horizontalmente con el texto */
+    vertical-align: middle;
+    /* Alinea la imagen horizontalmente con el texto */
 }
 
 .logo-container h1 { 
@@ -57,7 +60,8 @@ header {
 .navigation ul li {
     display: inline-block;
     margin-left: 15px;
-    margin-top: 13px; /* Centra los botones verticalmente dentro del header */
+    margin-top: 13px;
+    /* Centra los botones verticalmente dentro del header */
 }
 
 .navigation ul li a { 
@@ -88,26 +92,34 @@ header::after {
     padding-left: 20px;
     margin-left: 20px;
     float: right;
-    box-sizing: border-box; /* Evita que el padding sume ancho extra a la caja */
+    box-sizing: border-box;
+    /* Evita que el padding sume ancho extra a la caja */
 
     a {
-        display: block;    /* Convierte el enlace en una caja con dimensiones */
-        width: 100%;       /* Adapta el enlace al ancho disponible del aside */
+        display: block;
+        /* Convierte el enlace en una caja con dimensiones */
+        width: 100%;
+        /* Adapta el enlace al ancho disponible del aside */
         text-decoration: none;
     }
     
     img {
-        display: block;    /* Elimina el espacio fantasma que dejan las imágenes abajo */
-        width: 100%;       /* Ocupa todo el ancho del enlace */
+        display: block;
+        /* Elimina el espacio que dejan las imágenes abajo */
+        width: 100%;
+        /* Ocupa todo el ancho del enlace */
         height: auto;      
-        aspect-ratio: 1 / 4; /* Hace que la imagen sea exactamente 3 veces más alta que ancha */
-        object-fit: cover;   /* Recorta los laterales para que no se deforme al estirarse */
+        aspect-ratio: 1 / 4; 
+        /* Hace que la imagen sea más alta que ancha */
+        object-fit: cover;
+        /* Recorta los laterales para que no se deforme al estirarse */
+
         border: 1px solid #334155;
     }
 }
 
 .contenedor-peliculas {
-    background-color: rgba(30, 41, 59, 0.9); /* Fondo oscuro estilo plataforma de streaming */
+    background-color: rgba(30, 41, 59, 0.9);
     padding: 15px;
     font-family: sans-serif;
 }
@@ -118,30 +130,39 @@ header::after {
     margin-bottom: 15px;
 }
 
-/* El truco mágico para el scroll horizontal */
+/* Para el scroll horizontal */
 .carrusel-horizontal {
     width: 100%;
-    overflow-x: auto;          /* Activa el scroll hacia los lados si las fotos no caben */
-    white-space: nowrap;       /* Obliga a todas las tarjetas a quedarse en una sola línea */
-    padding-bottom: 20px;      /* Espacio para que no tape la barra de scroll */
+    overflow-x: auto;
+    /* Activa el scroll hacia los lados si las fotos no caben */
+    white-space: nowrap;
+    /* Obliga a todas las tarjetas a quedarse en una sola línea */
+    padding-bottom: 20px;
+    /* Espacio para que no tape la barra de scroll */
 }
 
 /* Estilos para cada tarjeta contenedora */
 .tarjeta-pelicula {
-    display: inline-block;     /* Se colocan una al lado de la otra de forma tradicional */
-    width: 160px;              /* Ancho horizontal de cada banner */
-    aspect-ratio: 4 / 4;      /* Proporción muy horizontal y estirada como tu imagen */
-    margin-right: 5px;        /* Separación entre tarjetas */
+    display: inline-block;
+    /* Se colocan una al lado de la otra */
+    width: 160px;
+    /* Ancho horizontal de cada banner */
+    aspect-ratio: 4 / 4;
+    /* Proporción muy horizontal y estirada */
+    margin-right: 5px;
+    /* Separación entre tarjetas */
     border-radius: 7px;
     overflow: hidden;
-    vertical-align: top;       /* Alinea perfectamente las cajas por arriba */
+    vertical-align: top;
+    /* Alinea perfectamente las cajas por arriba */
 }
 
 /* Estilos de la imagen dentro de la tarjeta */
 .tarjeta-pelicula img {
     width: 100%;
     height: 100%;
-    object-fit: cover;         /* Recorta la imagen para que llene el rectángulo sin deformarse */
+    object-fit: cover;
+    /* Recorta la imagen para que llene el rectángulo sin deformarse */
     display: block;
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -149,7 +170,8 @@ header::after {
 
 /* Efecto visual opcional al pasar el mouse por encima */
 .tarjeta-pelicula img:hover {
-    transform: scale(1.05);    /* Se agranda ligeramente como en Netflix */
+    transform: scale(1.05); 
+    /* Se agranda un poco */
 }
 /* CONTENEDOR PRINCIPAL E IMÁGENES */
 .imagen1 img {
@@ -164,7 +186,7 @@ main {
     max-width: 650px; 
     margin: 0 auto; 
     padding: 20px; 
-    padding-bottom: 40px; /* Reducido al no necesitar hueco extra para un footer flotante */
+    padding-bottom: 40px;
 }
 main h2 { color: #f8fafc; margin-bottom: 20px; font-size: 24px; }
 main h3 { color: #93c5fd; font-size: 16px; margin: 15px 0 8px; }
@@ -204,7 +226,7 @@ input[type="submit"]:hover { background-color: #7dd3fc; }
     border: 1px solid #334155;
 }
 
-/* PIE DE PÁGINA NORMAL ESTÁTICO (Formato clásico centrado al final de la web) (con ayuda de IA) */
+/* PIE DE PÁGINA ESTÁTICO (con ayuda de IA) */
 footer { 
     text-align: center; 
     padding: 40px 0; 
