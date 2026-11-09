@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web principal OndaMedia</title>
    
-       <!-- 1. Enlace para el Favicon (el logo pequeño) -->
+       <!-- Enlace para el Favicon (el logo pequeño) -->
     <link rel="icon" href="imagenes\icono.ico" type="image/png">
 
-        <!-- 2. Enlace para la Hoja de Estilos -->
+        <!-- Enlace para la Hoja de Estilos -->
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
@@ -22,28 +22,91 @@
     <!-- Barra de navegación -->
     <nav class="navigation">
         <ul>
+          <li><a href="https://instagram.com" target="_blank"><img src="imagenes/Iconoig.png" alt="Instagram"></a></li>
           <li><a href="#inicio" class="active">Ir a inicio</a></li>
           <li><a href="#formulario">Ir a formulario</a></li>
           <li><a href="#contacto">Ir a contacto</a></li>
           <!-- ENLACE A LA INTRANET -->
-          <li><a href="..\intranet\intranet.html">Intranet</a></li> 
+          <li><a href="http://intranet.ondamedia.local/">Intranet</a></li> 
         </ul>
     </nav>
   </header>
 
+  <!-- Imágenes de publicidad con aside -->
+  <aside class="publicidad-lateral">
+  <!-- El enlace envuelve la imagen para que todo el bloque sea interactivo -->
+  <a href="https://es.wikipedia.org/wiki/A%C3%ADda_(serie_de_televisi%C3%B3n_de_Espa%C3%B1a)" target="_blank" rel="noopener noreferrer">
+    <img src="imagenes\aida_publi.png" type="image/png">
+    </a>
+   </aside>
+
   <main>
-    <!-- ARTÍCULO 1: Presentación e introducción de la empresa -->
+    <!-- Presentación e introducción de la empresa -->
     <article class="seccion-intro">
+      
         <h2><section id="inicio">Introducción</section></h2>
         <p class="intro-texto">
-            <strong>OndaMedia</strong> es una plataforma de streaming, donde puedes disfrutar del cine, los documentales y cortometrajes de forma totalmente libre, gratuita y sin ninguna publicidad.
+            <strong>OndaMedia</strong> es una plataforma de streaming, donde puede disfrutar del cine, los documentales y cortometrajes de forma totalmente libre y gratuita.
             <br>
-            Crear tu cuenta es súper rápido y sencillo. Solo tienes que completar el formulario que dejamos aquí abajo para empezar a armar tu propia lista de reproducción.
+            Crear su cuenta es súper rápido y sencillo. Solo tiene que completar el formulario que dejamos aquí abajo para empezar a armar su propia lista de reproducción.
         </p>
     </article>
+    
     <div class="imagen1">
-      <img src="imagenes\img-cine.png" type="image/png"
+      <img src="imagenes\img-cine.png" type="image/png">
     </div>
+    <section class="contenedor-peliculas">
+  <!-- Películas -->
+  <h2>PELÍCULAS RECOMENDADAS</h2>
+
+  <!-- Contenedor del scroll horizontal -->
+  <div class="carrusel-horizontal">
+    
+    <div class="tarjeta-pelicula">
+      <a href="https://www.youtube.com/watch?v=3iy0pE1FBkc"  target="_blank" rel="noopener noreferrer">
+      <img src="imagenes\scary1.jpeg" alt="Scary Movie 1">
+      </a>
+    </div>
+
+    <div class="tarjeta-pelicula">
+      <a href="https://www.youtube.com/watch?v=NdnacU5sbcE"  target="_blank" rel="noopener noreferrer">
+      <img src="imagenes\scary2.jpeg" alt="Scary Movie 2">
+      </a>
+    </div>
+
+    <div class="tarjeta-pelicula">
+      <a href="https://www.youtube.com/watch?v=YfopzNHLp4o"  target="_blank" rel="noopener noreferrer">
+      <img src="imagenes\ochoape.jpeg" alt="Ocho apellidos vascos">
+      </a>
+    </div>
+
+    <div class="tarjeta-pelicula">
+      <a href="https://www.youtube.com/watch?v=XKxcf50t1xE"  target="_blank" rel="noopener noreferrer">
+      <img src="imagenes\saw6.jpeg" alt="Saw 6">
+      </a>
+    </div>
+
+    <div class="tarjeta-pelicula">
+      <a href="https://www.youtube.com/watch?v=UrIbxk7idYA"  target="_blank" rel="noopener noreferrer">
+      <img src="imagenes\300.jpeg" alt="300">
+     </a>
+    </div>
+
+    <div class="tarjeta-pelicula">
+      <a href="https://www.youtube.com/watch?v=l0FDexq2ciA"  target="_blank" rel="noopener noreferrer">
+      <img src="imagenes\noaceptan.jpeg" alt="No se aceptan devoluciones">
+      </a>
+    </div>
+
+    <div class="tarjeta-pelicula">
+      <a href="https://www.youtube.com/watch?v=dNsXv79G-_I"  target="_blank" rel="noopener noreferrer">
+      <img src="imagenes\rocky4.jpeg" alt="Rocky IV">
+      </a>
+    </div>
+
+  </div>
+</section>
+
            <!-- Formulario de registro -->
              <h2>Registro OndaMedia</h2>
                <fieldset><br>
@@ -54,10 +117,10 @@
             <div>
                <fieldset>
                     <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" required minlength="3" pattern=".*\S.*" title="El nombre debe tener mínimo 3 caracteres y no puede estar vacío" placeholder="Escriba su nombre"><br>
+                    <input type="text" id="nombre" name="nombre" required minlength="3" title="El nombre debe tener mínimo 3 caracteres y no puede estar vacío" placeholder="Escriba su nombre"><br>
 
                     <label for="apellido(s)">Apellidos:</label>
-                    <input type="text" id="apellido(s)" name="apellido(s)" required minlength="3" maxlength="40" pattern=".*\S.*" title="Los apellidos deben tener mínimo 3 caracteres y no pueden estar vacío" placeholder="Escriba sus dos apellidos"><br>
+                    <input type="text" id="apellido(s)" name="apellido(s)" required minlength="3" maxlength="40" title="Los apellidos deben tener mínimo 3 caracteres y no pueden estar vacío" placeholder="Escriba sus dos apellidos"><br>
                     
                     <label for="edad">Edad:</label>
                     <input type="number" id="edad" name="edad" required min="16" max="65">
@@ -72,10 +135,10 @@
                     <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com"><br>
  
                     <label for="telefono">Número de teléfono:</label>
-                    <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9}" maxlength="9" minlength="9" placeholder="600123456"><br>
+                    <input type="tel" id="telefono" name="telefono" maxlength="9" minlength="9" placeholder="600123456"><br>
 
                     <label for="CodPost">Código Postal:</label>
-                    <input type="tel" id="CodPost" name="CodPost" required pattern="[0-9]{5}" maxlength="5" minlength="5" placeholder="12345" title="Debe contener exactamente 5 números"><br>
+                    <input type="tel" id="CodPost" name="CodPost" required maxlength="5" minlength="5" placeholder="12345" title="Debe contener exactamente 5 números"><br>
 
                     <label for="FechaNaci">Fecha de nacimiento:</label>
                     <input type="date" id="FechaNaci" name="FechaNaci" required>
@@ -114,13 +177,19 @@
                     <input type="submit" id="enviar" name="enviar"><br>
         </fieldset>
     </form>
+
+    <!-- "Ubicación" un link de una empresa audiovisual en google maps -->
     <div class="mapa-container">
         <h3>Nuestra Ubicación</h3>
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2904.7618171139734!2d-2.012163!3d43.2773655!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd51b04beef6e1b9%3A0x314393ae80ec5d3!2sBengoa%20Audiovisuales!5e0!3m2!1ses!2ses!4v1793701462679!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>    </div>
   </main>
+
+  <!-- Pie de página -->
   <footer><section id="contacto">OndaMedia@gmail.com</section>
       <p>Errekalde Hiribidea, 1, Local 11, 20018 Donostia / San Sebastián</p>
       <p>Teléfono 648469467</p>
   </footer>
 </body>
 </html>  
+<!-- 	let fecha = date.now()	class error	NaN not a number	
+	let hora = fecha.hour ()		ahora.getday -->

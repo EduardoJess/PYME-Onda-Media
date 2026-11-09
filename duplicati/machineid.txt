@@ -1,0 +1,4 @@
+35bb0eb2f2e74df7bcc84ab27215f0f4
+
+This file is used to assign a unique ID to the machine, and used to identify the machine in reports.
+The first line in the file is used as an ID, but can be changed with --machine-id for a single or multiple runs.

@@ -4,12 +4,11 @@ body {
     font-family: 'Segoe UI', Arial, sans-serif; 
     background-color: #0f172a; 
     color: #cbd5e1; 
-    padding-top: 100px; /* Evita que el menú fijo tape el contenido superior */
+    padding-top: 100px; 
+    /* Evita que el menú fijo tape el contenido superior */
 }
 
-/* ==========================================================================
-   BARRA SUPERIOR FIJA (Header, Logo y Menú) - SIN FLEXBOX
-   ========================================================================== */
+/* BARRA SUPERIOR FIJA (Header, Logo y Menú) */
 header {
     position: fixed; 
     top: 0; 
@@ -18,21 +17,24 @@ header {
     height: 65px; 
     padding: 0 5%; 
     z-index: 9999;
+    /* Un número alto para asegurar que nada lo tape */
     background-color: rgba(30, 41, 59, 0.9); 
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* El logo se alinea a la izquierda mediante flotado tradicional */
+/* El logo se alinea a la izquierda mediante float left */
 .logo-container { 
     float: left;
     height: 65px;
-    line-height: 65px; /* Centra verticalmente el texto interior sin flexbox */
+    line-height: 65px; 
+    /* Centra verticalmente el texto interior */
 }
 
 .logo-container img { 
     height: 38px; 
     width: auto; 
-    vertical-align: middle; /* Alinea la imagen horizontalmente con el texto */
+    vertical-align: middle;
+    /* Alinea la imagen horizontalmente con el texto */
 }
 
 .logo-container h1 { 
@@ -44,7 +46,7 @@ header {
     vertical-align: middle;
 }
 
-/* El menú se alinea a la derecha mediante flotado tradicional */
+/* El menú se alinea a la derecha mediante float right */
 .navigation {
     float: right;
     height: 65px;
@@ -59,7 +61,8 @@ header {
 .navigation ul li {
     display: inline-block;
     margin-left: 15px;
-    margin-top: 13px; /* Centra los botones verticalmente dentro del header */
+    margin-top: 13px;
+    /* Centra los botones verticalmente dentro del header */
 }
 
 .navigation ul li a { 
@@ -76,23 +79,112 @@ header {
     color: #f8fafc; 
     background-color: rgba(255, 255, 255, 0.06); 
 }
+/* Cambia el tamaño del icono de Instagram */
+.navigation img {
+  width: 24px;       
+  /* Cambio el tamaño para que se alinee con el menú */
+  height: auto;
+  display: inline-block;
+  vertical-align: middle; 
+  /* Alinea el icono verticalmente con los textos */
+}
 
-/* Limpieza de flotados obligatoria para evitar errores en elementos continuos */
+
+/* Limpieza de float obligatoria para evitar errores en elementos continuos */
 header::after {
     content: "";
     display: table;
     clear: both;
 }
 
-/* ==========================================================================
-   CONTENEDOR PRINCIPAL Y MULTIMEDIA
-   ========================================================================== */
-.imagen1 {
-    width: 100%;
-    margin: 20px 0 30px 0;
-    text-align: center;
+/* Aside */
+.publicidad-lateral {
+    width: 15%;
+    padding-left: 20px;
+    margin-left: 20px;
+    float: right;
+    box-sizing: border-box;
+    /* Evita que el padding sume ancho extra a la caja */
 }
 
+.publicidad-lateral a {
+    display: block;
+    /* Convierte el enlace en una caja con dimensions */
+    width: 100%;
+    /* Adapta el enlace al ancho disponible del aside */
+    text-decoration: none;
+}
+
+.publicidad-lateral img {
+    display: block;
+    /* Elimina el espacio que dejan las imágenes abajo */
+    width: 100%;
+    /* Ocupa todo el ancho del enlace */
+    height: auto;      
+    aspect-ratio: 1 / 4; 
+    /* Hace que la imagen sea más alta que ancha */
+    object-fit: cover;
+    /* Recorta los laterales para que no se deforme al estirarse */
+    border: 1px solid #334155;
+}
+
+.contenedor-peliculas {
+    background-color: rgba(30, 41, 59, 0.9);
+    padding: 15px;
+    font-family: sans-serif;
+    border-radius: 8px;
+}
+
+.contenedor-peliculas h2 {
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+/* Para el scroll horizontal */
+.carrusel-horizontal {
+    width: 100%;
+    overflow-x: auto;
+    /* Activa el scroll hacia los lados si las fotos no caben */
+    white-space: nowrap;
+    /* Obliga a todas las tarjetas a quedarse en una sola línea */
+    padding-bottom: 20px;
+    /* Espacio para que no tape la barra de scroll */
+}
+
+/* Estilos para cada tarjeta contenedora */
+.tarjeta-pelicula {
+    display: inline-block;
+    /* Se colocan una al lado de la otra */
+    width: 160px;
+    /* Ancho horizontal de cada imagen */
+    aspect-ratio: 4 / 4;
+    /* Proporción muy horizontal y estirada */
+    margin-right: 5px;
+    /* Separación entre tarjetas */
+    border-radius: 7px;
+    overflow: hidden;
+    vertical-align: top;
+    /* Alinea perfectamente las cajas por arriba */
+}
+
+/* Estilos de la imagen de las películas */
+.tarjeta-pelicula img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Recorta la imagen para que llene el rectángulo sin deformarse */
+    display: block;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto visual al pasar el mouse por encima */
+.tarjeta-pelicula img:hover {
+    transform: scale(1.05); 
+    /* Se agranda un poco */
+}
+/* CONTENEDOR PRINCIPAL E IMÁGENES */
 .imagen1 img {
     max-width: 100%;
     height: auto;
@@ -105,15 +197,13 @@ main {
     max-width: 650px; 
     margin: 0 auto; 
     padding: 20px; 
-    padding-bottom: 40px; /* Reducido al no necesitar hueco extra para un footer flotante */
+    padding-bottom: 40px;
 }
 main h2 { color: #f8fafc; margin-bottom: 20px; font-size: 24px; }
 main h3 { color: #93c5fd; font-size: 16px; margin: 15px 0 8px; }
 .intro-texto { line-height: 1.6; margin-bottom: 25px; }
 
-/* ==========================================================================
-   FORMULARIOS, CAJAS DE ENTRADA Y BOTÓN
-   ========================================================================== */
+/* FORMULARIOS, CAJAS DE ENTRADA Y BOTÓN */
 fieldset { border: 1px solid #334155; padding: 20px; border-radius: 8px; background-color: #1e293b; margin-bottom: 20px; }
 legend { color: #38bdf8; font-weight: 600; padding: 0 8px; }
 label { display: inline-block; margin-top: 10px; margin-bottom: 5px; font-size: 14px; }
@@ -132,9 +222,7 @@ input[type="submit"] {
 }
 input[type="submit"]:hover { background-color: #7dd3fc; }
 
-/* ==========================================================================
-   MAPA RESPONSIVO (Sigue las dimensiones de main)
-   ========================================================================== */
+/* MAPA RESPONSIVO */
 .mapa-container {
     width: 100%;
     margin-top: 30px;
@@ -149,16 +237,86 @@ input[type="submit"]:hover { background-color: #7dd3fc; }
     border: 1px solid #334155;
 }
 
-/* ==========================================================================
-   PIE DE PÁGINA NORMAL ESTÁTICO (Formato clásico centrado al final de la web)
-   ========================================================================== */
+/* PIE DE PÁGINA ESTÁTICO */
 footer { 
     text-align: center; 
     padding: 40px 0; 
     color: #64748b; 
     font-size: 13px; 
     border-top: 1px solid rgba(255, 255, 255, 0.05);
-    background-color: #1e293b; /* Conserva tu color de fondo azul oscuro idéntico a tus fieldsets */
+    background-color: #1e293b;
     width: 100%;
     clear: both;
+}
+
+/* 1. MEDIA QUERY: TABLET (Max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+    .publicidad-lateral {
+        display: none !important;
+    }
+
+    main {
+        max-width: 90%;
+    }
+    
+    /* El scroll horizontal explícito en tablets */
+    .carrusel-horizontal {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+/* 2. MEDIA QUERY: MÓVIL (Max-width: 768px) */
+@media screen and (max-width: 768px) {
+    .publicidad-lateral {
+        display: none !important;
+    }
+
+    body {
+        padding-top: 130px; 
+    }
+
+    header {
+        height: auto; 
+        padding: 10px 5%;
+        text-align: center;
+    }
+
+    .logo-container {
+        float: none;
+        display: block;
+        height: auto;
+        line-height: normal;
+        margin-bottom: 10px;
+    }
+
+    .navigation {
+        float: none;
+        width: 100%;
+        height: auto;
+    }
+
+    .navigation ul {
+        height: auto;
+        display: block;
+        text-align: center;
+    }
+
+    .navigation ul li {
+        display: inline-block;
+        margin: 5px;
+        margin-top: 0;
+    }
+
+    .navigation ul li a {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+
+    /* CAMBIOS EN EL CARRUSEL */
+    .carrusel-horizontal {
+        overflow-x: visible;
+        white-space: normal;
+        padding-bottom: 0;
+    }
 }
