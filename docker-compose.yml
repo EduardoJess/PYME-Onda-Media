@@ -11,6 +11,7 @@ services:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro   # la configuración
       - ./web:/usr/share/nginx/html/web:ro
       - ./intranet:/usr/share/nginx/html/intranet:ro
+
   #visual studio
   code:
     image: lscr.io/linuxserver/code-server:latest
@@ -21,8 +22,8 @@ services:
       TZ: Europe/Madrid
       PASSWORD: "${PASSWORD_CODE_SERVER}"
     volumes:
-      - ..:/config/workspace/web
-      ..:/config/workspace/
+      - ./intranet:/config/workspace/intranet
+      - ./web:/config/workspace/web
       - code_config:/config
 
       #Duplicati
@@ -33,13 +34,14 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Madrid
-      - SETTINGS_ENCRYPTION_KEY="${SETTINGS_ENCRYPTION_KEY}
+      - SETTINGS_ENCRYPTION_KEY="${SETTINGS_ENCRYPTION_KEY}"
       - CLI_ARGS= #optional
-      - DUPLICATI__WEBSERVICE_PASSWORD="${DUPLICATI__WEBSERVICE_PASSWORD}
+      - DUPLICATI__WEBSERVICE_PASSWORD="${DUPLICATI__WEBSERVICE_PASSWORD}"
     volumes:
       - ./duplicati:/config
-      - ./micarpetasegura:/source/micarpetasegura
-
+      - ./intranet:/source/intranet:ro
+      - ./web:/source/web:ro
+      - portainer_data:/source/portainer_data:ro
     restart: unless-stopped
 
 
