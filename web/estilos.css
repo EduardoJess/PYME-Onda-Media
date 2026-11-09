@@ -78,6 +78,16 @@ header {
     color: #f8fafc; 
     background-color: rgba(255, 255, 255, 0.06); 
 }
+/* Cambia el tamaño del icono de Instagram */
+.navigation img {
+  width: 24px;       
+  /* Cambio el tamaño para que se alinee con el menú */
+  height: auto;
+  display: inline-block;
+  vertical-align: middle; 
+  /* Alinea el icono verticalmente con los textos */
+}
+
 
 /* Limpieza de float obligatoria para evitar errores en elementos continuos (con ayuda de IA) */
 header::after {
@@ -236,4 +246,96 @@ footer {
     background-color: #1e293b;
     width: 100%;
     clear: both;
+}
+
+/* 1. MEDIA QUERY: TABLET (Max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+    .publicidad-lateral {
+        display: none !important;
+    }
+
+    main {
+        max-width: 90%;
+    }
+    
+    /* El scroll horizontal explícito en tablets */
+    .carrusel-horizontal {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+/* 2. MEDIA QUERY: MÓVIL (Max-width: 768px) */
+@media screen and (max-width: 768px) {
+    .publicidad-lateral {
+        display: none !important;
+    }
+
+    body {
+        padding-top: 130px; 
+    }
+
+    header {
+        height: auto; 
+        padding: 10px 5%;
+        text-align: center;
+    }
+
+    .logo-container {
+        float: none;
+        display: block;
+        height: auto;
+        line-height: normal;
+        margin-bottom: 10px;
+    }
+
+    .navigation {
+        float: none;
+        width: 100%;
+        height: auto;
+    }
+
+    .navigation ul {
+        height: auto;
+        display: block;
+        text-align: center;
+    }
+
+    .navigation ul li {
+        display: inline-block;
+        margin: 5px;
+        margin-top: 0;
+    }
+
+    .navigation ul li a {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+
+    /* CAMBIOS EN EL CARRUSEL (De arriba a abajo, sin scroll) */
+    .carrusel-horizontal {
+        overflow-x: visible;
+        /* Quita el comportamiento de scroll oculto hacia los lados */
+        white-space: normal;
+        /* Permite que los elementos salten de línea */
+        padding-bottom: 0;
+    }
+
+    .tarjeta-pelicula {
+        display: block;
+        /* Fuerza a que cada película ocupe su propia línea */
+        width: 100%;
+        /* Hace que se estiren a lo ancho de la pantalla móvil */
+        max-width: 280px;
+        /* Limita el tamaño máximo para que no sean gigantes */
+        margin: 0 auto 15px;
+        /* Las centra horizontalmente y les da separación abajo */
+        aspect-ratio: 16 / 9;
+        /* Cambia la proporción a un formato panorámico mejor para móvil */
+    }
+
+    /* Ajustes para el mapa en móviles */
+    .mapa-container iframe {
+        height: 250px;
+    }
 }
