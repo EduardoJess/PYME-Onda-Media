@@ -4,22 +4,52 @@ body {
     font-family: sans-serif; 
     background-color: #0f172a; 
     color: #cbd5e1; 
-    padding-top: 100px; /* Evita que la barra tape el contenido */
+    padding-top: 100px; 
+    /* Evita que la barra tape el contenido */
 }
 
 /* Barra Superior Fija (Header, Logo y Menú) */
 header {
     position: fixed; top: 0; left: 0; width: 100%; height: 65px; padding: 0 5%; z-index: 9999;
-    display: flex; justify-content: space-between; align-items: center;
+    display: grid;
+    grid-template-columns: auto auto; 
+    /* Dos columnas automáticas a los extremos */
+    justify-content: space-between; 
+    /* Empuja una columna a la izquierda y otra a la derecha */
+    align-items: center;
     background-color: rgba(30, 41, 59, 0.9); border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
-.logo-container { display: flex; align-items: center; gap: 15px; }
-.logo-container img { height: 38px; width: auto; }
-.logo-container h1 { color: #f8fafc; font-size: 18px; font-weight: 600; }
+/* Estilo para el bloque del logo */
+.logo-container { 
+    display: block; 
+}
+.logo-container img { 
+    height: 38px; 
+    width: auto; 
+    display: inline-block; 
+    vertical-align: middle; 
+    margin-right: 15px; 
+}
+.logo-container h1 { 
+    color: #f8fafc; 
+    font-size: 18px; 
+    font-weight: 600; 
+    display: inline-block; 
+    vertical-align: middle; 
+}
 
-.navigation ul { list-style: none; display: flex; gap: 15px; }
+/* Menú de navegación en línea tradicional */
+.navigation ul { 
+    list-style: none; 
+    display: block; 
+}
+.navigation ul li { 
+    display: inline-block; 
+    margin-left: 15px; 
+}
 .navigation ul li a { 
     color: #94a3b8; text-decoration: none; font-size: 14px; font-weight: 500; padding: 8px 16px; border-radius: 6px; 
+    display: block;
 }
 .navigation ul li a:hover, .navigation ul li a.active { color: #f8fafc; background-color: rgba(255, 255, 255, 0.06); }
 
@@ -41,10 +71,14 @@ input[type="submit"] {
 /* 4. Alerta de error */
 .error-alerta { background: rgba(239,68,68,0.2); border: 1px solid #ef4444; color: #fca5a5; padding: 12px; margin-bottom: 15px; border-radius: 6px; }
 
-/* 5. Cabecera fija de la Intranet */
+/* 5. Cabecera fija de la Intranet Privada */
 .intranet-header {
     position: fixed; top: 0; left: 0; width: 100%; height: 65px; padding: 0 5%;
-    display: flex; justify-content: space-between; align-items: center;
+    display: grid;
+    grid-template-columns: auto auto; 
+    /* Título a la izquierda, botón a la derecha */
+    justify-content: space-between;
+    align-items: center;
     background: #1e293b; border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 .intranet-header h2 { margin: 0; font-size: 18px; }
@@ -53,3 +87,61 @@ input[type="submit"] {
 /* 6. Bloque de datos */
 .tarjeta-datos { border: 1px solid #334155; padding: 20px; background: #1e293b; border-radius: 8px; margin-top: 20px; }
 .tarjeta-datos h4 { color: #38bdf8; margin-bottom: 10px; }
+
+/* Estilos para la sección de servicios */
+.servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    /* repeat: es para no tener que repetir lo mismo muchas veces
+       auto-fit: mete las tarjetas que pueda en una misma fila según el espacio en pantalla
+       minmax: establece los límites para cada tarjeta */
+    gap: 15px;
+    margin-top: 25px;
+}
+
+/* Fuerza a que el enlace se comporte como una rejilla interna */
+.servicios a {
+    display: grid;
+    grid-template-rows: 1fr auto; 
+    /* La primera fila (texto) ocupa el espacio libre, la segunda (logo) se ajusta abajo */
+    background: #1e293b;
+    border: 1px solid #334155;
+    padding: 20px 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    text-align: center;
+    min-height: 150px; 
+    /* Altura mínima fija para que todas las tarjetas midan lo mismo */
+    align-items: center; 
+    /* Centra los elementos verticalmente dentro de sus filas */
+    transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.servicios a:hover {
+    transform: translateY(-3px);
+    /* modifica la forma, posición o tamaño de un elemento (rotar, escalar, etc)
+       translateY() Es la función que mueve el elemento en el eje Y (en vertical).
+       -3px (valor negativo) En las web, el punto cero empieza arriba. Un número negativo lo mueve hacia arriba */
+    border-color: #38bdf8;
+    background: #24344d;
+}
+
+/* El título siempre va a estar en la parte superior de la tarjeta */
+.servicios h3 {
+    font-size: 14px;
+    color: #93c5fd;
+    margin: 0 0 10px 0;
+    align-self: center; 
+    /* Centrado del texto */
+}
+
+/* Los logos se alinean perfectamente en la fila de abajo */
+.servicios img {
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto; 
+    /* Centrado horizontal automático */
+    object-fit: contain; 
+    /* Evita la deformación del logotipo */
+}
