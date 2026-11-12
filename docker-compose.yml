@@ -62,7 +62,7 @@ services:
     environment:
       - JELLYFIN_PublishedServerUrl=http://jellyfin.ondamedia.local
     volumes:
-      - jellyfin_config:/config
+      - ./jellyfin_config:/config
       - jellyfin_cache:/cache
       - ./media:/media
 
