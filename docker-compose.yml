@@ -41,9 +41,7 @@ services:
       - DUPLICATI__WEBSERVICE_PASSWORD="${DUPLICATI__WEBSERVICE_PASSWORD}"
     volumes:
       - ./duplicati:/config
-      - ./intranet:/source/intranet:ro
-      - ./web:/source/web:ro
-      - portainer_data:/source/portainer_data:ro
+      - .:/source:ro
     restart: unless-stopped
 
 
